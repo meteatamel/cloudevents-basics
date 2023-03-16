@@ -12,8 +12,12 @@ This repository contains information, references, and samples about CloudEvents.
 * Protocol Bindings: AMQP, HTTP, Kafka, MQTT, NATS, WebSockets
 * Event Formats: AVRO, JSON, Protobuf, XML
 * SDKs: Go, Javascript, Java, C#, Ruby, PHP, Python, Rust, Powershell
+* Google Events libraries
 * Next: Discovery API, Subscriptions API, Schema Registry
 
+## Samples
+
+* [Node.js - hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered Node.js service.
 
 ## References
 
