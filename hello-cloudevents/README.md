@@ -1,29 +1,19 @@
-# Node.js - hello-cloudevents
+# Hello CloudEvents
 
- A minimal CloudEvents triggered Node.js service.
+ A minimal CloudEvents triggered service.
 
-## Start server
-
-Install dependencies:
+Start the server:
 
 ```sh
-npm install
+dotnet run
 ```
-
-Run the function:
-
-```sh
-npm start
-```
-
-## Test
 
 Inside the [scripts](scripts) folder:
 
 ```sh
-./send_cloudevent_http_binary.sh
+./send_cloudevent_binary_http.sh
 
-Send binary-mode CloudEvent over HTTP
+Send a CloudEvent in binary-mode over HTTP
 Attributes are sent as ce- headers and data is encoded in the message body
 
 curl localhost:8080 -v \
@@ -42,9 +32,9 @@ curl localhost:8080 -v \
 ```
 
 ```sh
-./send_cloudevent_http_structured.sh
+./send_cloudevent_structured_http.sh
 
-Send structured-mode CloudEvent over HTTP
+Send a CloudEvent in structured-mode over HTTP
 Entire event (attribues and data) are encoded in the message body
 
 curl localhost:8080 -v \
@@ -54,12 +44,29 @@ curl localhost:8080 -v \
         "specversion": "1.0",
         "type": "com.mycompany.myapp.myservice.myevent",
         "source": "myservice/mysource",
-        "id: 1234-5678"
+        "id": "1234-5678",
         "time": "2023-01-02T12:34:56.789Z",
         "subject": "my-important-subject",
+        "datacontenttype": "application/json",
         "data": {
           "foo1": "bar1",
           "foo2": "bar2"
         }
       }'
+```
+
+The server receives both events:
+
+```log
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/ HTTP: POST'
+CloudEvent information:
+  ID: 1234-5678
+  Source: myservice/mysource
+  Type: com.mycompany.myapp.myservice.myevent
+  Subject: my-important-subject
+  DataSchema:
+  DataContentType: application/json
+  Time: 2023-01-02T12:34:56.789Z
+  SpecVersion: 1.0
 ```

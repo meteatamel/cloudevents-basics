@@ -7,7 +7,7 @@ This repository contains information, references, and samples about CloudEvents.
 ## TODO: Topics to cover
 
 * CloudEvents: Why? What?
-* CloudEvents Attributes
+* CloudEvents Attributes and custom attributes
 * Content Modes: Binary, Structured, Batched
 * Protocol Bindings: AMQP, HTTP, Kafka, MQTT, NATS, WebSockets
 * Event Formats: AVRO, JSON, Protobuf, XML
@@ -17,7 +17,7 @@ This repository contains information, references, and samples about CloudEvents.
 
 ## Samples
 
-* [Node.js - hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered Node.js service.
+* [hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered service.
 
 ## References
 

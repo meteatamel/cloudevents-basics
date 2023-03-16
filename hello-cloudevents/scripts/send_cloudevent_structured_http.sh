@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-echo "Send structured-mode CloudEvent over HTTP"
+echo "Send a CloudEvent in structured-mode over HTTP"
 echo -e "Entire event (attribues and data) are encoded in the message body\n"
 
 set -v
@@ -25,9 +25,10 @@ curl localhost:8080 -v \
         "specversion": "1.0",
         "type": "com.mycompany.myapp.myservice.myevent",
         "source": "myservice/mysource",
-        "id: 1234-5678"
+        "id": "1234-5678",
         "time": "2023-01-02T12:34:56.789Z",
         "subject": "my-important-subject",
+        "datacontenttype": "application/json",
         "data": {
           "foo1": "bar1",
           "foo2": "bar2"
