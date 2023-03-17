@@ -16,15 +16,31 @@ attributes". This metadata is the minimal set of information needed to route the
 request to the proper component. Data that is not intended for routing is placed
 within the data field of CloudEvent.
 
-### CloudEvent Format
+### Content Modes
+
+There are 3 content modes in CloudEvents: binary, structured, batched (in some
+cases):
+
+* **Binary-mode**: The event data is stored in the message body, and event
+  attributes are stored as part of message metadata. Good for supporting
+  receivers that might not be aware of CloudEvents as the metadata can be
+  ignored.
+* **Structured-mode**: The entire event (attributes and data) are encoded in the
+  message body.
+* **Batch-moe**: Multiple (zero or more) events are encoded in a single message body, according to a specific event format. Not all event formats or protocol bindings support batch-mode messages
+
+
+### SDKs
+
+There are [CloudEvents SDKs](https://github.com/cloudevents/) to read and write
+CloudEvents in various languages: Go, Javascript, Java, C#, Ruby, PHP, Python,
+Rust, Powershell.
 
 ### TODO
 
 * CloudEvents Attributes and custom attributes
-* Content Modes: Binary, Structured, Batched
 * Protocol Bindings: AMQP, HTTP, Kafka, MQTT, NATS, WebSockets
 * Event Formats: AVRO, JSON, Protobuf, XML
-* SDKs: Go, Javascript, Java, C#, Ruby, PHP, Python, Rust, Powershell
 * Google Events libraries
 * Next: Discovery API, Subscriptions API, Schema Registry
 
