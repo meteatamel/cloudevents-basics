@@ -4,9 +4,22 @@
 
 This repository contains information, references, and samples about CloudEvents.
 
-## TODO: Topics to cover
+## Topics
 
-* CloudEvents: Why? What?
+### CloudEvents: Why? What?
+
+CloudEvents is a specification for describing event data in a common way with
+the goal of increasing interoperability between different event systems.
+
+CloudEvents, at its core, defines a set of metadata, called "context
+attributes". This metadata is the minimal set of information needed to route the
+request to the proper component. Data that is not intended for routing is placed
+within the data field of CloudEvent.
+
+### CloudEvent Format
+
+### TODO
+
 * CloudEvents Attributes and custom attributes
 * Content Modes: Binary, Structured, Batched
 * Protocol Bindings: AMQP, HTTP, Kafka, MQTT, NATS, WebSockets
