@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Copyright 2023 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+echo "Send a CloudEvent in structured-mode over HTTP"
+echo -e "Entire event (attribues and data) are encoded in the message body\n"
+
+set -v
+curl localhost:8080 -v \
+  -X POST \
+  -H "Content-Type: application/cloudevents+json" \
+  -d '{
+        "specversion": "1.0",
+        "type": "google.cloud.storage.object.v1.finalized",
+        "source": "//storage.googleapis.com/projects/_/buckets/MY-BUCKET-NAME",
+        "id": "1234-5678",
+        "time": "2023-01-02T12:34:56.789Z",
+        "subject": "objects/MY_FILE.txt",
+        "datacontenttype": "application/json",
+        "data": {
+          "bucket": "MY_BUCKET",
+          "contentType": "text/plain",
+          "kind": "storage#object",
+          "md5Hash": "...",
+          "metageneration": "1",
+          "name": "MY_FILE.txt",
+          "size": "352",
+          "storageClass": "MULTI_REGIONAL",
+          "timeCreated": "2020-04-23T07:38:57.230Z",
+          "timeStorageClassUpdated": "2020-04-23T07:38:57.230Z",
+          "updated": "2020-04-23T07:38:57.230Z"
+        }
+      }'

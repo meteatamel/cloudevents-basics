@@ -17,7 +17,10 @@ This repository contains information, references, and samples about CloudEvents.
 
 ## Samples
 
-* [hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered service.
+* [hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered
+  service.
+* [hello-cloudevents-gcs](./hello-cloudevents-gcs/) - A Google Cloud Storage
+  CloudEvents triggered service.
 
 ## References
 
