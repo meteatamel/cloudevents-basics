@@ -27,6 +27,8 @@ curl localhost:8080 -v \
   -H "ce-id: 1234-5678" \
   -H "ce-time: 2023-01-02T12:34:56.789Z" \
   -H "ce-subject: my-important-subject" \
+  -H "ce-extensionattr1: value" \
+  -H "ce-extensionattr2: 5" \
   -d '{
         "foo1": "bar1",
         "foo2": "bar2"

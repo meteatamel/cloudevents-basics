@@ -28,6 +28,8 @@ curl localhost:8080 -v \
         "id": "1234-5678",
         "time": "2023-01-02T12:34:56.789Z",
         "subject": "my-important-subject",
+        "extensionattr1" : "value",
+        "extensionattr2" : 5,
         "datacontenttype": "application/json",
         "data": {
           "foo1": "bar1",

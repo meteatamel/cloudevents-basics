@@ -45,6 +45,8 @@ curl localhost:8080 -v \
   -H "ce-id: 1234-5678" \
   -H "ce-time: 2023-01-02T12:34:56.789Z" \
   -H "ce-subject: my-important-subject" \
+  -H "ce-extensionattr1: value" \
+  -H "ce-extensionattr2: 5" \
   -d '{
         "foo1": "bar1",
         "foo2": "bar2"
@@ -65,12 +67,35 @@ curl localhost:8080 -v \
         "time": "2023-01-02T12:34:56.789Z",
         "subject": "my-important-subject",
         "datacontenttype": "application/json",
+        "extensionattr1" : "value",
+        "extensionattr2" : 5,
         "data": {
           "foo1": "bar1",
           "foo2": "bar2"
         }
       }'
 ```
+
+### CloudEvent Attributes
+
+**Core** attributes are defined by spec and divided into required and optional:
+
+Required:
+
+* specversion
+* id
+* source
+* type
+
+Optional:
+
+* subject
+* time
+* datacontenttype
+* dataschema
+
+**Extension** attributes ae additional metadata to help proper routing and
+processing of the CloudEvent.
 
 ### SDKs
 
@@ -80,7 +105,6 @@ Rust, Powershell.
 
 ### TODO
 
-* CloudEvents Attributes and custom attributes
 * Protocol Bindings: AMQP, HTTP, Kafka, MQTT, NATS, WebSockets
 * Event Formats: AVRO, JSON, Protobuf, XML
 * Google Events libraries
