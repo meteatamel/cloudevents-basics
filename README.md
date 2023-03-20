@@ -16,21 +16,6 @@ attributes". This metadata is the minimal set of information needed to route the
 request to the proper component. Data that is not intended for routing is placed
 within the `data` (or base64 encoded `data_base64`) field of CloudEvent.
 
-### Content Modes
-
-There are 3 content modes in CloudEvents: binary, structured, batched.
-
-* **Binary-mode**: The event data is stored in the message body, and event
-  attributes are stored as part of message metadata. Allows for efficient
-  transfer and without transcoding effort. Good for supporting receivers that
-  might not be aware of CloudEvents as the metadata can be ignored.
-* **Structured-mode**: Keeps event metadata and data together in the payload,
-  allowing simple forwarding of the same event across multiple routing hops, and
-  across multiple protocols.
-* **Batch-mode**: Multiple (zero or more) events are encoded in a single message
-  body, according to a specific event format. Not all event formats or protocol
-  bindings support batch-mode messages.
-
 ### What does a CloudEvent look like?
 
 Binary-mode:
@@ -97,18 +82,77 @@ Optional:
 **Extension** attributes ae additional metadata to help proper routing and
 processing of the CloudEvent.
 
+### Content Modes
+
+There are 3 content modes in CloudEvents: binary, structured, batched.
+
+* **Binary-mode**: The event data is stored in the message body, and event
+  attributes are stored as part of message metadata. Allows for efficient
+  transfer and without transcoding effort. Good for supporting receivers that
+  might not be aware of CloudEvents as the metadata can be ignored.
+* **Structured-mode**: Keeps event metadata and data together in the payload,
+  allowing simple forwarding of the same event across multiple routing hops, and
+  across multiple protocols.
+* **Batch-mode**: Multiple (zero or more) events are encoded in a single message
+  body, according to a specific event format.
+
+**Batch-mode is not supported in all protocol/SDK combinations**. For example,
+Javascript SDK supports HTTP and Kafka batch mode but not MQTT batch mode.
+
+### Event Formats
+
+Defines how the CloudEvent is serialized:
+
+* JSON
+* Protobuf
+* Avro
+* XML (draft)
+
+**Not all event formats are supported in each SDK. JSON is the most supported one.**
+
+### Protocol Bindings
+
+Defines how the CloudEvent is bound to an application protocol's transport frame:
+
+* HTTP
+* AMQP
+* Kafka
+* MQTT
+* NATS
+* WebSockets (draft)
+
+**Not all protocol bindings are supported in each SDK. HTTP is the most
+supported one.** For example, Javascript SDK supports HTTP and Kafka but not
+AMQP, MQTT, NATS
+
 ### SDKs
 
 There are [CloudEvents SDKs](https://github.com/cloudevents/) to read and write
 CloudEvents in various languages: Go, Javascript, Java, C#, Ruby, PHP, Python,
 Rust, Powershell.
 
-### TODO
+### Google CloudEvents and libraries
 
-* Protocol Bindings: AMQP, HTTP, Kafka, MQTT, NATS, WebSockets
-* Event Formats: AVRO, JSON, Protobuf, XML
-* Google Events libraries
-* Next: Discovery API, Subscriptions API, Schema Registry
+This repository contains types for CloudEvents issued by Google:
+
+* [googleapis/google-cloudevents](https://github.com/googleapis/google-cloudevents)
+
+Google CloudEvent Type Libraries help you to parse the `data` field of
+CloudEvents:
+
+* [Node.js](https://github.com/googleapis/google-cloudevents-nodejs)
+* [Python](https://github.com/googleapis/google-cloudevents-python)
+* [Go](https://github.com/googleapis/google-cloudevents-go)
+* [Java](https://github.com/googleapis/google-cloudevents-java)
+* *[.NET](https://github.com/googleapis/google-cloudevents-dotnet)
+
+### New specs
+
+These are works-in-progress specs:
+
+* Discovery API
+* Subscriptions API
+* Schema Registry
 
 ## Samples
 
