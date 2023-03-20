@@ -32,14 +32,15 @@ app.MapPost("/", async context =>
     CloudEvent cloudEvent = await context.Request.ToCloudEventAsync(formatter);
 
     Console.WriteLine("CloudEvent information:");
+    Console.WriteLine($"  SpecVersion: {cloudEvent.SpecVersion.VersionId}");
     Console.WriteLine($"  ID: {cloudEvent.Id}");
     Console.WriteLine($"  Source: {cloudEvent.Source}");
     Console.WriteLine($"  Type: {cloudEvent.Type}");
     Console.WriteLine($"  Subject: {cloudEvent.Subject}");
     Console.WriteLine($"  DataSchema: {cloudEvent.DataSchema}");
     Console.WriteLine($"  DataContentType: {cloudEvent.DataContentType}");
+    Console.WriteLine($"  Data: {cloudEvent.Data}");
     Console.WriteLine($"  Time: {cloudEvent.Time?.ToUniversalTime():yyyy-MM-dd'T'HH:mm:ss.fff'Z'}");
-    Console.WriteLine($"  SpecVersion: {cloudEvent.SpecVersion.VersionId}");
 
     var data = cloudEvent.Data as StorageObjectData;
 
