@@ -4,9 +4,7 @@
 
 This repository contains information, references, and samples about CloudEvents.
 
-## Topics
-
-### CloudEvents: Why? What?
+## CloudEvents: Why? What?
 
 CloudEvents is a specification for describing event data in a common way with
 the goal of increasing interoperability between different event systems.
@@ -16,7 +14,7 @@ attributes". This metadata is the minimal set of information needed to route the
 request to the proper component. Data that is not intended for routing is placed
 within the `data` (or base64 encoded `data_base64`) field of CloudEvent.
 
-### What does a CloudEvent look like?
+## What does a CloudEvent look like?
 
 Binary-mode:
 
@@ -61,7 +59,7 @@ curl localhost:8080 -v \
       }'
 ```
 
-### CloudEvent Attributes
+## CloudEvent Attributes
 
 **Core** attributes are defined by spec and divided into required and optional:
 
@@ -82,7 +80,7 @@ Optional:
 **Extension** attributes ae additional metadata to help proper routing and
 processing of the CloudEvent.
 
-### Content Modes
+## Content Modes
 
 There are 3 content modes in CloudEvents: binary, structured, batched.
 
@@ -99,7 +97,7 @@ There are 3 content modes in CloudEvents: binary, structured, batched.
 **Batch-mode is not supported in all protocol/SDK combinations**. For example,
 Javascript SDK supports HTTP and Kafka batch mode but not MQTT batch mode.
 
-### Event Formats
+## Event Formats
 
 Defines how the CloudEvent is serialized:
 
@@ -110,7 +108,7 @@ Defines how the CloudEvent is serialized:
 
 **Not all event formats are supported in each SDK. JSON is the most supported one.**
 
-### Protocol Bindings
+## Protocol Bindings
 
 Defines how the CloudEvent is bound to an application protocol's transport frame:
 
@@ -125,13 +123,13 @@ Defines how the CloudEvent is bound to an application protocol's transport frame
 supported one.** For example, Javascript SDK supports HTTP and Kafka but not
 AMQP, MQTT, NATS
 
-### SDKs
+## SDKs
 
 There are [CloudEvents SDKs](https://github.com/cloudevents/) to read and write
 CloudEvents in various languages: Go, Javascript, Java, C#, Ruby, PHP, Python,
 Rust, Powershell.
 
-### Google CloudEvents and libraries
+## Google CloudEvents and libraries
 
 This repository contains types for CloudEvents issued by Google:
 
@@ -146,7 +144,7 @@ CloudEvents:
 * [Java](https://github.com/googleapis/google-cloudevents-java)
 * *[.NET](https://github.com/googleapis/google-cloudevents-dotnet)
 
-### New specs
+## New specs
 
 These are works-in-progress specs:
 
