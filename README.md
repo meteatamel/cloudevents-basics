@@ -1,4 +1,4 @@
-# CloudEvents Samples
+# CloudEvents Basics
 
 ![CloudEvents Logo](https://avatars.githubusercontent.com/u/32076828?s=200&v=4)
 
