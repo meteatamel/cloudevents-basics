@@ -6,8 +6,9 @@ This repository contains information, references, and samples about CloudEvents.
 
 ## CloudEvents: Why? What?
 
-CloudEvents is a specification for describing event data in a common way with
-the goal of increasing interoperability between different event systems.
+[CloudEvents](https://cloudevents.io/) is a specification for describing event
+data in a common way with the goal of increasing interoperability between
+different event systems.
 
 CloudEvents, at its core, defines a set of metadata, called "context
 attributes". This metadata is the minimal set of information needed to route the
@@ -61,7 +62,7 @@ curl localhost:8080 -v \
 
 ## CloudEvent Attributes
 
-**Core** attributes are defined by spec and divided into required and optional:
+**Core** attributes are defined by the spec.
 
 Required:
 
@@ -82,7 +83,7 @@ processing of the CloudEvent.
 
 ## Content Modes
 
-There are 3 content modes in CloudEvents: binary, structured, batched.
+There are 3 content modes in CloudEvents:
 
 * **Binary-mode**: The event data is stored in the message body, and event
   attributes are stored as part of message metadata. Allows for efficient
@@ -106,7 +107,8 @@ Defines how the CloudEvent is serialized:
 * Avro
 * XML (draft)
 
-**Not all event formats are supported in each SDK. JSON is the most supported one.**
+**Not all event formats are supported in each SDK. JSON is the most supported
+one.** For example, Javascript SDK supports JSON but not Avro or Protobuf.
 
 ## Protocol Bindings
 
@@ -126,8 +128,17 @@ AMQP, MQTT, NATS
 ## SDKs
 
 There are [CloudEvents SDKs](https://github.com/cloudevents/) to read and write
-CloudEvents in various languages: Go, Javascript, Java, C#, Ruby, PHP, Python,
-Rust, Powershell.
+CloudEvents in various languages: 
+
+* [Go](https://github.com/cloudevents/sdk-go)
+* [Javascript](https://github.com/cloudevents/sdk-)
+* [Java]
+* [C#](https://github.com/cloudevents/sdk-csharp)
+* [Ruby](https://github.com/cloudevents/sdk-ruby)
+* [PHP](https://github.com/cloudevents/sdk-php)
+* [Python](https://github.com/cloudevents/sdk-python)
+* [Rust](https://github.com/cloudevents/sdk-rust)
+* [Powershell](https://github.com/cloudevents/sdk-powershell)
 
 ## Google CloudEvents and libraries
 
@@ -135,16 +146,18 @@ This repository contains types for CloudEvents issued by Google:
 
 * [googleapis/google-cloudevents](https://github.com/googleapis/google-cloudevents)
 
-Google CloudEvent Type Libraries help you to parse the `data` field of
-CloudEvents:
+Google CloudEvent Type Libraries help parse the `data` field of
+CloudEvents into Google Events:
 
 * [Node.js](https://github.com/googleapis/google-cloudevents-nodejs)
 * [Python](https://github.com/googleapis/google-cloudevents-python)
 * [Go](https://github.com/googleapis/google-cloudevents-go)
 * [Java](https://github.com/googleapis/google-cloudevents-java)
-* *[.NET](https://github.com/googleapis/google-cloudevents-dotnet)
+* [.NET](https://github.com/googleapis/google-cloudevents-dotnet)
 
-## New specs
+[Eventarc](https://cloud.google.com/eventarc) uses CloudEvents for all of its events.
+
+## Upcoming specs
 
 These are works-in-progress specs:
 
