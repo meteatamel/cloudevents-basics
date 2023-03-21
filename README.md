@@ -131,8 +131,8 @@ There are [CloudEvents SDKs](https://github.com/cloudevents/) to read and write
 CloudEvents in various languages: 
 
 * [Go](https://github.com/cloudevents/sdk-go)
-* [Javascript](https://github.com/cloudevents/sdk-)
-* [Java]
+* [Javascript](https://github.com/cloudevents/sdk-javascript)
+* [Java](https://github.com/cloudevents/sdk-java)
 * [C#](https://github.com/cloudevents/sdk-csharp)
 * [Ruby](https://github.com/cloudevents/sdk-ruby)
 * [PHP](https://github.com/cloudevents/sdk-php)
@@ -149,11 +149,11 @@ This repository contains types for CloudEvents issued by Google:
 Google CloudEvent Type Libraries help parse the `data` field of
 CloudEvents into Google Events:
 
-* [Node.js](https://github.com/googleapis/google-cloudevents-nodejs)
-* [Python](https://github.com/googleapis/google-cloudevents-python)
+* [C#](https://github.com/googleapis/google-cloudevents-dotnet)
 * [Go](https://github.com/googleapis/google-cloudevents-go)
 * [Java](https://github.com/googleapis/google-cloudevents-java)
-* [.NET](https://github.com/googleapis/google-cloudevents-dotnet)
+* [Node.js](https://github.com/googleapis/google-cloudevents-nodejs)
+* [Python](https://github.com/googleapis/google-cloudevents-python)
 
 [Eventarc](https://cloud.google.com/eventarc) uses CloudEvents for all of its events.
 
@@ -168,9 +168,10 @@ These are works-in-progress specs:
 ## Samples
 
 * [hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered
-  service.
+  service using C# CloudEvents SDK.
 * [hello-cloudevents-gcs](./hello-cloudevents-gcs/) - A Google Cloud Storage
-  CloudEvents triggered service.
+  CloudEvents triggered service using C# CloudEvents SDK and Google CloudEvent
+  Type Library.
 
 ## References
 
