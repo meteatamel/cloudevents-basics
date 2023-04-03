@@ -10,6 +10,10 @@ This repository contains information, references, and samples about CloudEvents.
 data in a common way with the goal of increasing interoperability between
 different event systems.
 
+Google Cloud's [Eventarc](https://cloud.google.com/eventarc/docs), open-source
+[Knative](https://knative.dev/docs/), Azure's Event Grid, and many more projects
+rely on CloudEvent specification to define their event formats.
+
 CloudEvents, at its core, defines a set of metadata, called "context
 attributes". This metadata is the minimal set of information needed to route the
 request to the proper component. Data that is not intended for routing is placed
@@ -78,8 +82,10 @@ Optional:
 * datacontenttype
 * dataschema
 
-**Extension** attributes ae additional metadata to help proper routing and
-processing of the CloudEvent.
+**Extension** attributes are additional optional metadata to help proper routing
+and processing of the CloudEvent. Some [known
+extensions](https://github.com/cloudevents/spec/blob/main/cloudevents/documented-extensions.md)
+are documented.
 
 ## Content Modes
 
@@ -167,6 +173,8 @@ These are works-in-progress specs:
 
 ## Samples
 
+Some samples to show how to read CloudEvents:
+
 * [hello-cloudevents](./hello-cloudevents/) - A minimal CloudEvents triggered
   service using C# CloudEvents SDK.
 * [hello-cloudevents-gcs](./hello-cloudevents-gcs/) - A Google Cloud Storage
@@ -174,6 +182,8 @@ These are works-in-progress specs:
   Type Library.
 
 ## References
+
+Some useful references:
 
 * [CloudEvents.io](https://cloudevents.io/)
 * [CloudEvents Spec](https://github.com/cloudevents/spec)
