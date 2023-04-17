@@ -183,12 +183,14 @@ Some samples to show how to read CloudEvents:
 
 ## References
 
-Some useful references:
+Useful links:
 
 * [CloudEvents.io](https://cloudevents.io/)
 * [CloudEvents Spec](https://github.com/cloudevents/spec)
 * [CloudEvents SDKs](https://github.com/cloudevents/)
-* Talks
+
+Talks:
+
   * [CloudEvents: Intro, Deep-Dive - Doug Davis, Clemens Vasters, Klaus Deissner & Vladimir Bacvanski](https://youtu.be/yg7RuDWHwV8)
   * [CloudEvents: Intro, Status and the Future - Scott Nichols](https://youtu.be/m1sT-BuA9WU)
   * [CloudEvents And Beyond! - Doug Davis](https://youtu.be/bJTUttZr-Ck)
